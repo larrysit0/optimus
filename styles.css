@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#botonRojo {
+    background-color: red;
+    color: white;
+}
+
+#botonAzul {
+    background-color: blue;
+    color: white;
+}
