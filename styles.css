@@ -1,8 +1,19 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: white;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -10,20 +21,25 @@ h1 {
 }
 
 button {
-    font-size: 18px;
-    padding: 15px;
-    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
     border-radius: 5px;
 }
 
-#botonRojo {
-    background-color: red;
-    color: white;
+button:hover {
+    background-color: #45a049;
 }
 
-#botonAzul {
-    background-color: blue;
-    color: white;
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
