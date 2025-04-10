@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alarma Vecinos Trebol-Brisas</title>
+    <title>WebApp de Alarmas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Activar Alarmas</h1>
+        
+        <div class="alarms">
+            <!-- Botón para alarma con geolocalización -->
+            <button id="alarmaGeolocalizacion" onclick="activarAlarma('geolocalizacion')">Alarma con Geolocalización</button>
 
-    <h1>⚠️Sistema De Alarma</h1>
-    <h1>Vecinos Trebol-Brisas</h1>
-    <p>Presiona un solo botón para enviar una alerta al grupo.</p>
+            <!-- Botón para alarma con descripción -->
+            <button id="alarmaDescripcion" onclick="activarAlarmaConDescripcion()">Alarma con Descripción</button>
 
-    <!-- Botones de alarma -->
-    <button id="botonRojo">🚨 Botón Rojo - Alerta con GEOLOCALIZACION</button>
-    <br>
-    <br>
-    <br>
-    <br>
-    <button id="botonAzul">🔵 Botón Azul - Alerta detalla la Ubicacion</button>
+            <!-- Caja de texto para ingresar la descripción -->
+            <input type="text" id="descripcion" placeholder="Escribe una descripción" style="display: none;">
+            <button id="enviarDescripcion" style="display: none;" onclick="activarAlarma('descripcion')">Enviar Descripción</button>
+        </div>
 
-    <script src="script.js"></script> <!-- Archivo JavaScript -->
+        <div id="respuesta"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
