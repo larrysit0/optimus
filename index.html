@@ -9,17 +9,15 @@
 <body>
     <div class="container">
         <h1>Activar Alarmas</h1>
-        
+
         <div class="alarms">
-            <!-- Botón para alarma con geolocalización -->
-            <button id="alarmaGeolocalizacion" onclick="activarAlarma('geolocalizacion')">Alarma con Geolocalización</button>
+            <!-- Alarma con geolocalización -->
+            <input type="text" id="descripcionGeo" placeholder="Describe la emergencia (Geo)">
+            <button id="alarmaGeolocalizacion" class="verde" disabled onclick="activarAlarma('geolocalizacion')">Alarma con Geolocalización</button>
 
-            <!-- Botón para alarma con descripción -->
-            <button id="alarmaDescripcion" onclick="activarAlarmaConDescripcion()">Alarma con Descripción</button>
-
-            <!-- Caja de texto para ingresar la descripción -->
-            <input type="text" id="descripcion" placeholder="Escribe una descripción" style="display: none;">
-            <button id="enviarDescripcion" style="display: none;" onclick="activarAlarma('descripcion')">Enviar Descripción</button>
+            <!-- Alarma solo con descripción -->
+            <input type="text" id="descripcionSolo" placeholder="Describe la emergencia (Sin Geo)">
+            <button id="alarmaDescripcion" class="azul" disabled onclick="activarAlarma('descripcion')">Alarma sin Geolocalización</button>
         </div>
 
         <div id="respuesta"></div>
