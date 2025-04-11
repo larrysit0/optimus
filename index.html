@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebApp de Alarmas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Alarma Telegram</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Archivo CSS -->
 </head>
 <body>
     <div class="container">
-        <h1>Activar Alarmas</h1>
+        <h1>Enviar Alarma</h1>
 
-        <!-- Alarma con geolocalización -->
-        <div class="alarms">
-            <input type="text" id="descripcionGeo" placeholder="Descripción para geolocalización">
-            <button id="alarmaGeolocalizacion" class="btn-verde" disabled onclick="activarAlarma('geolocalizacion')">
-                Alarma con Geolocalización
-            </button>
+        <!-- Botón Rojo con Casillero -->
+        <div class="alert-box">
+            <textarea id="mensajeRojo" placeholder="Describe la emergencia..."></textarea>
+            <button class="btn rojo" onclick="enviarAlarma(true)">🚨 Enviar con Geolocalización</button>
         </div>
 
-        <!-- Alarma sin geolocalización -->
-        <div class="alarms">
-            <input type="text" id="descripcionSolo" placeholder="Ubicación o descripción de la emergencia">
-            <button id="alarmaDescripcion" class="btn-azul" disabled onclick="activarAlarma('descripcion')">
-                Alarma con Descripción
-            </button>
+        <!-- Botón Azul con Casillero -->
+        <div class="alert-box">
+            <textarea id="mensajeAzul" placeholder="Describe la emergencia..."></textarea>
+            <button class="btn azul" onclick="enviarAlarma(false)">🔵 Enviar sin Geolocalización</button>
         </div>
-
-        <div id="respuesta"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script>  <!-- Archivo JavaScript -->
 </body>
 </html>
