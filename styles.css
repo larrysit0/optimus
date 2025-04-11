@@ -21,7 +21,6 @@ h1 {
 }
 
 button {
-    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -31,15 +30,32 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button.verde {
+    background-color: #4CAF50;
+}
+
+button.verde:hover:enabled {
     background-color: #45a049;
+}
+
+button.azul {
+    background-color: #007BFF;
+}
+
+button.azul:hover:enabled {
+    background-color: #0056b3;
 }
 
 input[type="text"] {
     padding: 10px;
     font-size: 16px;
-    margin-top: 10px;
     width: 80%;
+    margin-top: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
