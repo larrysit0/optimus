@@ -1,33 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alarma Telegram</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Archivo CSS -->
-</head>
-<body>
+<div class="container">
+    <h2 class="titulo">🔔 Alarma Vecinos Trebol-Brisas</h2>
+    <h1>Enviar Alarma</h1>
 
-    <div class="container">
-
-        <!-- Título principal personalizado -->
-        <h2 style="color: #555; margin-bottom: 10px;">🔔 Alarma Vecinos Trebol-Brisas</h2>
-
-        <h1>Enviar Alarma</h1>
-
-        <!-- Botón Rojo con Casillero -->
-        <div class="alert-box">
-            <textarea id="mensajeRojo" placeholder="Describe la emergencia..."></textarea>
-            <button class="btn rojo" onclick="enviarAlarma(true)">🚨 Enviar con Geolocalización</button>
-        </div>
-
-        <!-- Botón Azul con Casillero -->
-        <div class="alert-box">
-            <textarea id="mensajeAzul" placeholder="Describe la emergencia..."></textarea>
-            <button class="btn azul" onclick="enviarAlarma(false)">🔵 Enviar sin Geolocalización</button>
-        </div>
+    <!-- Alerta con Geolocalización -->
+    <div class="alert-box">
+        <textarea id="mensajeRojo" placeholder="Describe la emergencia..."></textarea>
+        <button class="btn rojo" onclick="enviarAlarma(true)">🚨 Enviar con Geolocalización</button>
     </div>
 
-    <script src="script.js"></script>  <!-- Archivo JavaScript -->
-</body>
-</html>
+    <!-- Alerta sin Geolocalización -->
+    <div class="alert-box separador">
+        <textarea id="mensajeAzul" placeholder="Describe la emergencia..."></textarea>
+        <button class="btn azul" onclick="enviarAlarma(false)">🔵 Enviar sin Geolocalización</button>
+    </div>
+</div>
