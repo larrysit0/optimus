@@ -1,68 +1,52 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
     text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
     background-color: white;
-    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.alarms {
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
+/* Estilos para los botones */
+.btn {
+    display: block;
     width: 100%;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 18px;
     border: none;
     border-radius: 5px;
-}
-
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.btn-verde {
-    background-color: #4CAF50;
+    cursor: pointer;
     color: white;
 }
 
-.btn-verde:hover:enabled {
-    background-color: #45a049;
+/* Botón Rojo */
+.btn.rojo {
+    background-color: red;
 }
 
-.btn-azul {
-    background-color: #007BFF;
-    color: white;
+/* Botón Azul */
+.btn.azul {
+    background-color: blue;
 }
 
-.btn-azul:hover:enabled {
-    background-color: #0069d9;
+/* Área de texto para descripción */
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
 }
