@@ -1,37 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const descripcionGeo = document.getElementById("descripcionGeo");
-    const botonGeo = document.getElementById("alarmaGeolocalizacion");
+// Función para enviar la alarma al bot de Telegram
+function enviarAlarma(conGeolocalizacion) {
+    // Determinar qué mensaje se va a enviar
+    let mensaje = conGeolocalizacion 
+        ? document.getElementById("mensajeRojo").value 
+        : document.getElementById("mensajeAzul").value;
 
-    const descripcionSolo = document.getElementById("descripcionSolo");
-    const botonSolo = document.getElementById("alarmaDescripcion");
-
-    descripcionGeo.addEventListener("input", function () {
-        botonGeo.disabled = this.value.trim() === "";
-    });
-
-    descripcionSolo.addEventListener("input", function () {
-        botonSolo.disabled = this.value.trim() === "";
-    });
-});
-
-function activarAlarma(tipo) {
-    let descripcion = "";
-
-    if (tipo === "geolocalizacion") {
-        descripcion = document.getElementById("descripcionGeo").value;
-    } else if (tipo === "descripcion") {
-        descripcion = document.getElementById("descripcionSolo").value;
+    if (mensaje.trim() === "") {
+        alert("Por favor, escribe un mensaje antes de enviar.");
+        return;
     }
 
-    const url = `/activar_alarma?tipo=${tipo}&descripcion=${encodeURIComponent(descripcion)}`;
+    // Crear el objeto de datos que se enviará al bot de Telegram
+    let data = { 
+        mensaje: mensaje, 
+        geolocalizacion: conGeolocalizacion 
+    };
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("respuesta").innerText = data.message;
-        })
-        .catch(error => {
-            document.getElementById("respuesta").innerText = "Ocurrió un error al enviar la alarma.";
-            console.error(error);
-        });
+    // Enviar los datos al bot usando fetch
+    fetch("http://localhost:5000/enviarAlarma", {  // URL local del bot
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Alarma enviada correctamente.");
+    })
+    .catch(error => {
+        alert("Error al enviar la alarma.");
+        console.error("Error:", error);
+    });
 }
