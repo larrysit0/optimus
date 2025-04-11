@@ -1,24 +1,26 @@
-// Función para activar la alarma, recibe el tipo de alarma (geolocalizacion o descripcion)
 function activarAlarma(tipo) {
-    let url = `/activar_alarma?tipo=${tipo}`;
+    let descripcion = '';
 
-    // Si el tipo es "descripcion", añadir la descripción a la URL
-    if (tipo === 'descripcion') {
-        const descripcion = document.getElementById("descripcion").value;
-        url += `&descripcion=${descripcion}`;
+    if (tipo === 'geolocalizacion') {
+        descripcion = document.getElementById("descripcionGeo").value;
+    } else if (tipo === 'descripcion') {
+        descripcion = document.getElementById("descripcionSolo").value;
     }
 
-    // Realizamos la solicitud GET al backend
+    let url = `/activar_alarma?tipo=${tipo}&descripcion=${encodeURIComponent(descripcion)}`;
+
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // Mostrar respuesta en la interfaz
             document.getElementById("respuesta").innerText = data.message;
         });
 }
 
-// Función para mostrar el campo de texto para descripción
-function activarAlarmaConDescripcion() {
-    document.getElementById("descripcion").style.display = "block";
-    document.getElementById("enviarDescripcion").style.display = "block";
-}
+// Habilita los botones si hay texto en su respectiva caja
+document.getElementById("descripcionGeo").addEventListener("input", function () {
+    document.getElementById("alarmaGeolocalizacion").disabled = this.value.trim() === "";
+});
+
+document.getElementById("descripcionSolo").addEventListener("input", function () {
+    document.getElementById("alarmaDescripcion").disabled = this.value.trim() === "";
+});
