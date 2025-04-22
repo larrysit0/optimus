@@ -1,16 +1,19 @@
+// Obtener elementos del DOM
 const textarea = document.getElementById('descripcion');
 const boton = document.getElementById('btnEmergencia');
 const statusMsg = document.getElementById('statusMsg');
 const toggleRealTime = document.getElementById('toggleRealTime');
 
 // Ubicaciones predeterminadas de los miembros del grupo
+// Cada objeto contiene el nombre del miembro y sus coordenadas de ubicación
 const ubicacionesPredeterminadas = [
-  { nombre: 'Miembro 1', lat: -12.0464, lon: -77.0428 },
-  { nombre: 'Miembro 2', lat: -12.0564, lon: -77.0528 },
-  // Agrega más miembros aquí
+  { nombre: 'Miembro 1', lat: -12.0464, lon: -77.0428, telefono: '+51960661434' }, // Miembro 1
+  { nombre: 'Miembro 2', lat: -12.0564, lon: -77.0528, telefono: '+51960661435' }, // Miembro 2
+  { nombre: 'Miembro 3', lat: -12.0664, lon: -77.0628, telefono: '+51960661436' }  // Miembro 3
 ];
 
-let ubicacionSeleccionada = ubicacionesPredeterminadas[0]; // Predeterminada
+// Inicialmente, seleccionamos la ubicación del Miembro 1
+let ubicacionSeleccionada = ubicacionesPredeterminadas[0];
 
 // Actualiza la ubicación seleccionada cuando se desliza el botón
 toggleRealTime.addEventListener('change', () => {
@@ -21,6 +24,7 @@ toggleRealTime.addEventListener('change', () => {
   }
 });
 
+// Habilitar o deshabilitar el botón de alerta según el contenido del textarea
 textarea.addEventListener('input', () => {
   const texto = textarea.value.trim();
   if (texto.length >= 4 && texto.length <= 300) {
@@ -34,6 +38,7 @@ textarea.addEventListener('input', () => {
   }
 });
 
+// Manejar el evento de clic en el botón de alerta
 boton.addEventListener('click', () => {
   const descripcion = textarea.value.trim();
 
@@ -67,6 +72,7 @@ boton.addEventListener('click', () => {
   }
 });
 
+// Función para enviar la alerta
 function enviarAlerta(descripcion, lat, lon) {
   fetch('/api/alert', {
     method: 'POST',
@@ -97,3 +103,16 @@ function enviarAlerta(descripcion, lat, lon) {
     statusMsg.textContent = "❌ Hubo un error al enviar la alerta.";
   });
 }
+
+// Ejemplo de cómo agregar más miembros
+// Para agregar un nuevo miembro, simplemente agrega un nuevo objeto al array `ubicacionesPredeterminadas`
+// Ejemplo:
+/*
+const nuevoMiembro = {
+  nombre: 'Miembro 4',
+  lat: -12.0764,
+  lon: -77.0728,
+  telefono: '+51960661437'
+};
+ubicacionesPredeterminadas.push(nuevoMiembro);
+*/
