@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alarma Telegram</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Archivo CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Botón de Emergencia</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>⚠️Sistema Alarmas </h1>
-        <h1>Vecinos Trebol-Brisas</h1>
+  <div class="container">
+    <h1>🚨 Botón de Emergencia</h1>
+    <p>Describe brevemente la emergencia:</p>
 
-        <!-- Botón Rojo con Casillero -->
-        <div class="alert-box">
-            <textarea id="mensajeRojo" placeholder="Describe la emergencia..."></textarea>
-            <button class="btn rojo" onclick="enviarAlarma(true)">🚨 Enviar con Geolocalización</button>
-            
-        </div>
-        <br>
-        <br>
+    <textarea id="descripcion" placeholder="Escribe tu mensaje..." maxlength="300"></textarea>
 
-        <div class="alert-box">
-            <textarea id="mensajeAzul" placeholder="Describe la emergencia..."></textarea>
-            <button class="btn azul" onclick="enviarAlarma(false)">🔵 Enviar sin Geolocalización</button>
-            
-        </div>
-
+    <div class="toggle-container">
+      <label class="toggle-switch">
+        <input type="checkbox" id="toggleRealTime" />
+        <span class="slider"></span>
+      </label>
+      <p>Usar ubicación en tiempo real</p>
     </div>
-    
-        
 
-    <script src="script.js"></script>  <!-- Archivo JavaScript -->
+    <button id="btnEmergencia" class="btn red" disabled>🚨 Enviar Alerta Roja</button>
+
+    <p class="status" id="statusMsg">⏳ Esperando acción del usuario...</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
