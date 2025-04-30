@@ -70,7 +70,7 @@ boton.addEventListener('click', () => {
 });
 
 // ⚠️ AJUSTA ESTA URL CON LA QUE TE DA NGROK
-const API_URL = 'https://TU_SUBDOMINIO_NGROK.ngrok.io/api/alert'; // <-- Reemplázala por la que te muestra Ngrok
+const API_URL = 'https://e4ed-129-222-182-124.ngrok-free.app/api/alert'; // <-- Reemplázala por la que te muestra Ngrok
 
 function enviarAlerta(descripcion, lat, lon) {
   fetch(API_URL, {
