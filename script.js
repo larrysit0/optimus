@@ -4,7 +4,7 @@ const boton = document.getElementById('btnEmergencia');
 const statusMsg = document.getElementById('statusMsg');
 const toggleRealTime = document.getElementById('toggleRealTime');
 
-// Lista de ubicaciones predefinidas
+// Lista de ubicaciones predefinidas (se pueden cambiar por ubicaciones reales)
 const ubicacionesPredeterminadas = [
   { nombre: 'Miembro 1', lat: -12.0464, lon: -77.0428, telefono: '+51960661434' },
   { nombre: 'Miembro 2', lat: -12.0564, lon: -77.0528, telefono: '+51960661435' },
@@ -69,9 +69,10 @@ boton.addEventListener('click', () => {
   }
 });
 
-// ⚠️ AJUSTA ESTA URL CON LA QUE TE DA NGROK
-const API_URL = 'https://e4ed-129-222-182-124.ngrok-free.app/api/alert'; // <-- Reemplázala por la que te muestra Ngrok
+// URL de la API de Ngrok
+const API_URL = '/api/alert';
 
+// Función para enviar la alerta al servidor
 function enviarAlerta(descripcion, lat, lon) {
   fetch(API_URL, {
     method: 'POST',
@@ -80,25 +81,25 @@ function enviarAlerta(descripcion, lat, lon) {
       tipo: 'Alerta Roja Activada',
       descripcion,
       ubicacion: {
-        latitud: lat,
-        longitud: lon
+        lat,
+        lon
       }
     })
   })
   .then(response => response.json())
   .then(data => {
-    alert('✅ Alerta enviada con ubicación');
-    textarea.value = '';
-    boton.disabled = true;
-    boton.classList.remove('enabled');
-    boton.textContent = "Enviar Alerta Roja";
-    statusMsg.textContent = "✅ Alerta enviada correctamente";
+    alert(`✅ ${data.status}`);
+    resetBoton();
   })
   .catch(error => {
-    alert('❌ Error al enviar la alerta');
-    console.error(error);
-    boton.disabled = false;
-    boton.textContent = "Enviar Alerta Roja";
-    statusMsg.textContent = "❌ Hubo un error al enviar la alerta.";
+    alert("Error al enviar alerta. Intenta nuevamente.");
+    resetBoton();
   });
+}
+
+// Función para resetear el botón y el estado
+function resetBoton() {
+  boton.disabled = false;
+  boton.textContent = "🚨 Enviar Alerta Roja";
+  statusMsg.textContent = "⏳ Esperando acción del usuario...";
 }
