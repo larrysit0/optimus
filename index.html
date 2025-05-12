@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración de la codificación de caracteres y el viewport para dispositivos móviles -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Botón de Emergencia</title>
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Solo debes tener esta línea para el CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+
+  <!-- Solo esta línea para el JS -->
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+
+
 </head>
 <body>
+  <!-- Contenedor principal para el contenido -->
   <div class="container">
     <h1>🚨 Botón de Emergencia</h1>
     <p>Describe brevemente la emergencia:</p>
 
+    <!-- Campo de texto para la descripción de la emergencia -->
     <textarea id="descripcion" placeholder="Escribe tu mensaje..." maxlength="300"></textarea>
 
+    <!-- Contenedor del botón deslizante para activar la ubicación en tiempo real -->
     <div class="toggle-container">
       <label class="toggle-switch">
         <input type="checkbox" id="toggleRealTime" />
@@ -21,11 +36,13 @@
       <p>Usar ubicación en tiempo real</p>
     </div>
 
+    <!-- Botón para enviar la alerta de emergencia (deshabilitado por defecto) -->
     <button id="btnEmergencia" class="btn red" disabled>🚨 Enviar Alerta Roja</button>
 
+    <!-- Mensaje de estado para mostrar información sobre el proceso -->
     <p class="status" id="statusMsg">⏳ Esperando acción del usuario...</p>
   </div>
 
-  <script src="script.js"></script>
+ 
 </body>
 </html>
