@@ -1,1 +1,135 @@
+/* Estilos para el cuerpo de la página */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Color de fondo oscuro */
+  color: #ffffff; /* Color de texto blanco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+}
+
+/* Contenedor principal de la interfaz */
+.container {
+  text-align: center;
+  padding: 2em;
+  border-radius: 12px;
+  background-color: #1e1e1e; /* Fondo oscuro del contenedor */
+  box-shadow: 0 0 16px rgba(255, 0, 0, 0.4); /* Sombra roja */
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Estilos para el título */
+h1 {
+  margin-bottom: 10px;
+}
+
+/* Estilos generales para los párrafos */
+p {
+  margin: 1em 0;
+}
+
+/* Estilos para el campo de texto (textarea) */
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: none;
+  resize: none; /* Impide redimensionar */
+  margin-bottom: 15px;
+  background-color: #2a2a2a; /* Fondo oscuro para el campo */
+  color: white; /* Color de texto blanco */
+}
+
+textarea::placeholder {
+  color: #999; /* Color gris para el placeholder */
+}
+
+/* Estilos para el botón */
+.btn {
+  padding: 12px 20px;
+  font-size: 1em;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: not-allowed; /* Cursor deshabilitado por defecto */
+  width: 100%;
+  opacity: 0.6; /* Opacidad baja cuando está deshabilitado */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.btn.red {
+  background-color: #e53935; /* Color rojo para el botón */
+  color: white; /* Color de texto blanco */
+}
+
+.btn.red.enabled {
+  cursor: pointer; /* Cursor habilitado cuando el botón está activo */
+  opacity: 1; /* Opacidad completa cuando está habilitado */
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.7); /* Sombra más fuerte */
+}
+
+/* Estilos para el mensaje de estado */
+.status {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 0.9em;
+  color: #ccc; /* Color gris claro */
+}
+
+/* Estilos para el botón deslizante */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3; /* Color azul cuando está activado */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Mueve el círculo a la derecha cuando está activado */
+}
 
