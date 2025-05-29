@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Configuración de la codificación de caracteres y el viewport para dispositivos móviles -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Botón de Emergencia</title>
-  <!-- Solo debes tener esta línea para el CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-
-
-  <!-- Solo esta línea para el JS -->
-  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topora.Vip</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Contenedor principal para el contenido -->
-  <div class="container">
-    <h1>🚨 Botón de Emergencia</h1>
-    <p>Describe brevemente la emergencia:</p>
-
-    <!-- Campo de texto para la descripción de la emergencia -->
-    <textarea id="descripcion" placeholder="Escribe tu mensaje..." maxlength="300"></textarea>
-
-    <!-- Contenedor del botón deslizante para activar la ubicación en tiempo real -->
-    <div class="toggle-container">
-      <label class="toggle-switch">
-        <input type="checkbox" id="toggleRealTime" />
-        <span class="slider"></span>
-      </label>
-      <p>Usar ubicación en tiempo real</p>
-    </div>
-
-    <!-- Botón para enviar la alerta de emergencia (deshabilitado por defecto) -->
-    <button id="btnEmergencia" class="btn red" disabled>🚨 Enviar Alerta Roja</button>
-
-    <!-- Mensaje de estado para mostrar información sobre el proceso -->
-    <p class="status" id="statusMsg">⏳ Esperando acción del usuario...</p>
-  </div>
-
- 
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Registro</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Turismo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="imagen-del-pacífico.jpg" alt="Imagen del Pacífico, Toarpa y las Pampas de Tópara">
+            <h1>Descubre el encanto de Del Pacífico, Toarpa y las Pampas de Tópara</h1>
+            <button>Explora más</button>
+        </section>
+        <section class="features">
+            <ul>
+                <li>
+                    <i class="icon icon-1"></i>
+                    <p>Confraternidad de comunidades</p>
+                </li>
+                <li>
+                    <i class="icon icon-2"></i>
+                    <p>Sistema de alarmas</p>
+                </li>
+                <li>
+                    <i class="icon icon-3"></i>
+                    <p>Ofertas de trabajo o servicios</p>
+                </li>
+            </ul>
+        </section>
+        <section class="video-carousel">
+            <div class="carousel-inner">
+                <figure>
+                    <img src="video-1.jpg" alt="Video 1">
+                    <figcaption> Vídeo 1: Paisaje impresionante en Del Pacífico, Toarpa y las Pampas de Tópara</figcaption>
+                </figure>
+                <figure>
+                    <img src="video-2.jpg" alt="Video 2">
+                    <figcaption>Vídeo 2: Actividad turística en Del Pacífico, Toarpa y las Pampas de Tópara</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="news-events">
+            <h1>Noticias y eventos recientes</h1>
+            <ul>
+                <li>
+                    <a href="#">Título de la noticia 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+                </li>
+                <li>
+                    <a href="#">Título de la noticia 2: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                </li>
+            </ul>
+        </section>
+        <!-- Sección de tecnologías y sección de get involved -->
+    </main>
+    <footer>
+        <p>&copy; 2025 Topora.Vip</p>
+        <nav>
+            <ul>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Políticas de privacidad</a></li>
+                <li><a href="#">Términos de uso</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
