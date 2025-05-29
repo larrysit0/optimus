@@ -1,79 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topora.Vip</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Topara VIP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2e0849);
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #0f0f1e, transparent);
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: #00ffc8;
+      text-shadow: 0 0 15px #00ffc8;
+    }
+    header p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #cccccc;
+    }
+    .hero-button {
+      margin-top: 40px;
+      padding: 15px 30px;
+      background-color: #00ffc8;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffc8;
+      transition: transform 0.3s;
+    }
+    .hero-button:hover {
+      transform: scale(1.05);
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fdd835;
+    }
+    .section p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Iniciar sesión</a></li>
-                <li><a href="#">Registro</a></li>
-                <li><a href="#">Noticias</a></li>
-                <li><a href="#">Turismo</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <img src="imagen-del-pacífico.jpg" alt="Imagen del Pacífico, Toarpa y las Pampas de Tópara">
-            <h1>Descubre el encanto de Del Pacífico, Toarpa y las Pampas de Tópara</h1>
-            <button>Explora más</button>
-        </section>
-        <section class="features">
-            <ul>
-                <li>
-                    <i class="icon icon-1"></i>
-                    <p>Confraternidad de comunidades</p>
-                </li>
-                <li>
-                    <i class="icon icon-2"></i>
-                    <p>Sistema de alarmas</p>
-                </li>
-                <li>
-                    <i class="icon icon-3"></i>
-                    <p>Ofertas de trabajo o servicios</p>
-                </li>
-            </ul>
-        </section>
-        <section class="video-carousel">
-            <div class="carousel-inner">
-                <figure>
-                    <img src="video-1.jpg" alt="Video 1">
-                    <figcaption> Vídeo 1: Paisaje impresionante en Del Pacífico, Toarpa y las Pampas de Tópara</figcaption>
-                </figure>
-                <figure>
-                    <img src="video-2.jpg" alt="Video 2">
-                    <figcaption>Vídeo 2: Actividad turística en Del Pacífico, Toarpa y las Pampas de Tópara</figcaption>
-                </figure>
-            </div>
-        </section>
-        <section class="news-events">
-            <h1>Noticias y eventos recientes</h1>
-            <ul>
-                <li>
-                    <a href="#">Título de la noticia 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                </li>
-                <li>
-                    <a href="#">Título de la noticia 2: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
-                </li>
-            </ul>
-        </section>
-        <!-- Sección de tecnologías y sección de get involved -->
-    </main>
-    <footer>
-        <p>&copy; 2025 Topora.Vip</p>
-        <nav>
-            <ul>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Políticas de privacidad</a></li>
-                <li><a href="#">Términos de uso</a></li>
-            </ul>
-        </nav>
-    </footer>
-    <script src="script.js"></script>
+  <header>
+    <h1>Topara.vip</h1>
+    <p>Un futuro nace desde el desierto. Tecnología, turismo y comunidad.</p>
+    <button class="hero-button" onclick="scrollToSeccion('inicio')">Descubre Topara</button>
+  </header>
+
+  <section class="section" id="inicio">
+    <h2>Nacimiento de Topara</h2>
+    <p>Desde los recorridos por el acantilado de Trébol del Pacífico, hasta los sueños de convertir las pampas en un polo turístico y tecnológico, Topara nace como una visión de esperanza e innovación.</p>
+  </section>
+
+  <section class="section">
+    <h2>Educación y Futuro</h2>
+    <p>Promovemos la enseñanza de programación, robótica, drones y desarrollo web como pilares para la transformación juvenil y social.</p>
+  </section>
+
+  <section class="section">
+    <h2>Turismo y Naturaleza</h2>
+    <p>Topara es un destino en crecimiento. Buscamos incentivar el turismo seguro y saludable para familias y jóvenes, mostrando la belleza de nuestras pampas, playas y rutas.</p>
+  </section>
+
+  <footer>
+    © 2025 Topara.vip — Hecho con visión y esperanza desde el desierto 🌵🚀
+  </footer>
+
+  <script>
+    function scrollToSeccion(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
