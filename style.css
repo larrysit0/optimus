@@ -9,7 +9,7 @@ body {
 header {
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(to right, #FF9800, #FFC107);
+    background: #FF9800; /* Igual que el footer */
     color: white;
 }
 
