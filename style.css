@@ -42,13 +42,15 @@ header {
     margin-bottom: 1rem;
 }
 
-footer {
-    background-color: #222;
-    color: #eee;
-    padding: 1.5rem;
-    text-align: center;
-    margin-top: 2rem;
+.footer {
+  background-color: #ff6f00; /* igual que el header */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .coffee-support {
     text-align: center;
